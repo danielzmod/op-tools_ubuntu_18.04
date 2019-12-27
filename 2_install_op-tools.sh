@@ -28,7 +28,7 @@ tar xfz zeromq-4.2.3.tar.gz
 pushd zeromq-4.2.3
 ./autogen.sh
 ./configure CPPFLAGS=-DPIC CFLAGS=-fPIC CXXFLAGS=-fPIC LDFLAGS=-fPIC --disable-shared --enable-static
-make
+make -j 4
 sudo make install
 popd
 rm -rf zeromq-4.2.3.tar.gz zeromq-4.2.3
@@ -53,7 +53,7 @@ popd
 rm -rf capnproto-c++-0.6.1 c-capnproto/ capnproto-c++-0.6.1.tar.gz
 
 # 5. Add openpilot to your PYTHONPATH
-echo 'export PYTHONPATH="/home/openpilot/openpilot"' >> ~/.bashrc
+echo 'export PYTHONPATH="/home/openpilot/git/openpilot"' >> ~/.bashrc
 source ~/.bashrc
 
 # 6. Add folders to root
@@ -62,12 +62,15 @@ sudo mkdir -v /data/params
 sudo chown -v $USER /data/params
 
 # create virtualenv for openpilot
-cd
-git clone https://github.com/commaai/openpilot
-cd openpilot
-pipenv install # Install dependencies in a virtualenv
-echo "Continue running part2 inside the virtual enviroment"
-pipenv shell # Activate the virtualenv
+#cd
+#git clone https://github.com/commaai/openpilot
+#pushd openpilot
+#git checkout v0.6.6
+#git clone https://github.com/commaai/openpilot-tools tools
+#pushd tools
+#pipenv install # Install dependencies in a virtualenv
+#echo "Continue running part2 inside the virtual enviroment"
+#pipenv shell # Activate the virtualenv
 
 
 
