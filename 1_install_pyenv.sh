@@ -14,3 +14,5 @@ export PATH="/home/openpilot/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+echo "Ignore warning above about adding to profile."
+echo "Its automatically done."
