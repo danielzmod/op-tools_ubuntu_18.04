@@ -1,0 +1,51 @@
+Notes:
+Openpilot v0.7 Ubuntu 18.04
+
+$ sudo apt install scons
+
+# Build tools
+$ sudo apt install autoconf automake clang clang-3.8 libtool pkg-config build-essential
+
+$ git clone https://github.com/commaai/openpilot
+$ cd openpilot
+$ pipenv install
+
+# Install capnp
+$ cd cereal
+$ sudo ./install_capnp.sh
+
+# Dependancy for zmq (optional probably)
+# Worked without it
+#sudo apt install libunwind-dev
+# Install zmq 4.2.3
+curl -LO https://github.com/zeromq/libzmq/releases/download/v4.2.3/zeromq-4.2.3.tar.gz
+tar xfz zeromq-4.2.3.tar.gz
+cd zeromq-4.2.3
+./autogen.sh
+./configure CPPFLAGS=-DPIC CFLAGS=-fPIC CXXFLAGS=-fPIC LDFLAGS=-fPIC --disable-shared --enable-static
+make -j4
+sudo make install
+
+# Dependacy boardd.cc
+sudo apt install libusb-1.0-0-dev opencl-c-headers libavcodec-dev libjpeg-dev install libgles2-mesa-dev ocl-icd-opencl-dev libeigen3-dev
+# Run scons
+$ scons
+
+Now scons go through.
+
+
+# build cereal (needed to get unlogger running)
+# deps 
+# cant get it building failing with undefined reference 
+# to pthread stuff.
+sudo apt install libpthread-stubs0-dev
+
+Try openpilot-tools.
+
+#ffmpeg
+sudo apt install ffmpeg libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev
+# libarchive-dev
+sudo apt install libarchive-dev
+# python qt4
+sudo apt install python-qt4
+

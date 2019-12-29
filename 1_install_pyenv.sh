@@ -10,9 +10,9 @@ xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
 # Run installation script
 curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 
-export PATH="/home/openpilot/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+echo 'export PATH="/home/openpilot/.pyenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
 
 echo "**********************************************"
 echo "Ignore warning above about adding to profile."
