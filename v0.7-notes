@@ -27,7 +27,7 @@ make -j4
 sudo make install
 
 # Dependacy boardd.cc
-sudo apt install libusb-1.0-0-dev opencl-c-headers libavcodec-dev libjpeg-dev install libgles2-mesa-dev ocl-icd-opencl-dev libeigen3-dev
+sudo apt install libusb-1.0-0-dev opencl-c-headers libavcodec-dev libjpeg-dev libgles2-mesa-dev ocl-icd-opencl-dev libeigen3-dev
 # Run scons
 $ scons
 
